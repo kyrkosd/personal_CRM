@@ -1,6 +1,6 @@
 const API_URL = "http://localhost:8000";
 let currentClientId = null;
-let currentClientName = "";
+let currentClientName = "";  
 
 document.getElementById("add-client-form").addEventListener("submit", async (e) => {
     e.preventDefault();

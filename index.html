@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; background: #f4f4f9; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1, h2 { color: #333; }
+        form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 2rem; }
+        input, select, textarea, button { padding: 10px; font-size: 1rem; }
+        button { background: #007bff; color: white; border: none; cursor: pointer; border-radius: 4px; }
+        button:hover { background: #0056b3; }
+        ul { list-style: none; padding: 0; }
+        li { background: #eee; margin: 5px 0; padding: 10px; border-radius: 4px; display: flex; justify-content: space-between; cursor: pointer;}
+        li:hover { background: #ddd; }
+        .message { background: #f9f9f9; padding: 10px; margin-bottom: 10px; border-left: 4px solid #007bff; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Simple CRM</h1>
+        
+        <section id="add-client-section">
+            <h2>Add Client</h2>
+            <form id="add-client-form">
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="text" id="tag" placeholder="Tag (e.g., Prospect, VIP)" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="tel" id="telephone" placeholder="Telephone" required>
+                <button type="submit">Create</button>
+            </form>
+        </section>
+
+        <section id="clients-list-section">
+            <h2>Clients</h2>
+            <ul id="clients-list"></ul>
+        </section>
+
+        <section id="correspondence-section" style="display: none;">
+            <h2 id="active-client-name"></h2>
+            <div id="messages"></div>
+            <form id="add-message-form">
+                <textarea id="message-content" placeholder="Type a message..." required></textarea>
+                <select id="message-sender">
+                    <option value="user">User (You)</option>
+                    <option value="client">Client</option>
+                </select>
+                <button type="submit">Add Correspondence</button>
+            </form>
+        </section>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
